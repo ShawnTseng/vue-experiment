@@ -17,6 +17,18 @@
         </span>
     </div>
 
+    <div id="app3">
+        <p v-if="seen">這是一段若隱若現的文字</p>
+    </div>
+
+    <div id="app4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+
     <script src="index.js"></script>
 </body>
 
