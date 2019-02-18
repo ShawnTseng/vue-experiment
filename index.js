@@ -48,3 +48,19 @@ var app6 = new Vue({
         message: '訊息綁定測試'
     }
 })
+
+Vue.component('todo-item',{
+    props: ['todo'],
+    template: '<li>{{todo.text}}</li>'
+})
+
+var app7 = new Vue({
+    el: '#app7',
+    data:{
+        groceryList:[
+            {id:0, text: '水果'},
+            {id:1, text: '青菜'},
+            {id:2, text: '飲料'}
+        ]
+    }
+})
