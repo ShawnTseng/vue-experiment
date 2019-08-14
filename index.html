@@ -7,7 +7,10 @@
 
 <body>
     <div id="app">
-        {{title}}
+        <div>{{title}}</div>
+        <span v-bind:title="loadTime">
+            滑鼠移置文字上，顯示'網頁啟動時間'
+        </span>
     </div>
 
     <!-- 開發環境版本，包含了有幫助的命令行警告 -->
