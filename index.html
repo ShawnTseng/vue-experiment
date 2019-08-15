@@ -12,6 +12,12 @@
             滑鼠移置文字上，顯示'網頁啟動時間'
         </span>
         <div v-if="showHint">看情況顯示文字</div>
+        <hr>
+        <ul>
+            <li v-for="data in dataList">
+                {{data.text}}
+            </li>
+        </ul>
     </div>
 
     <!-- 開發環境版本，包含了有幫助的命令行警告 -->

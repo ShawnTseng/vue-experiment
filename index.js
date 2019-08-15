@@ -3,6 +3,11 @@ var app = new Vue({
     data: {
         title: 'Hello World',
         loadTime: '網頁啟動於:' + new Date().toLocaleString(),
-        showHint: true
+        showHint: true,
+        dataList: [
+            { text: '第一個項目' },
+            { text: '第二個項目' },
+            { text: '第三個項目' }
+        ]
     }
 })
