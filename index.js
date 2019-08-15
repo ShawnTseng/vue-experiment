@@ -9,5 +9,10 @@ var app = new Vue({
             { text: '第二個項目' },
             { text: '第三個項目' }
         ]
-    }
+    },
+    methods: {
+        switchShowHint: function () {
+            this.showHint = !this.showHint
+        }
+    },
 })
