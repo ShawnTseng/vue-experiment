@@ -17,12 +17,8 @@
         <div v-if="showHint">看情況顯示文字</div>
         <hr>
         <ul>
-            <li v-for="data in dataList">
-                {{data.text}}
-            </li>
-            <list-item></list-item>
-            <list-item></list-item>
-            <list-item></list-item>
+            <list-item v-for="data in dataList" v-bind:item="data">
+            </list-item>
         </ul>
     </div>
 
