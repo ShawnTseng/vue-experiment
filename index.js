@@ -1,3 +1,7 @@
+Vue.component('list-item', {
+    template: '<li>第N個項目</li>'
+})
+
 var app = new Vue({
     el: '#app',
     data: {
