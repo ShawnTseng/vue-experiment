@@ -15,11 +15,18 @@
         <br>
         <button v-on:click="switchShowHint">開關</button>
         <div v-if="showHint">看情況顯示文字</div>
+        <div>
+            <input type="text" v-bind:disabled="!showHint">
+        </div>
+        <div v-once>{{showHint}}</div>
         <hr>
         <ul>
             <list-item v-for="data in dataList" v-bind:item="data">
             </list-item>
         </ul>
+        <span>HTML解析</span>
+        <div>{{rawHtml}}</div>
+        <div v-html="rawHtml"></div>
     </div>
 
     <!-- 開發環境版本，包含了有幫助的命令行警告 -->

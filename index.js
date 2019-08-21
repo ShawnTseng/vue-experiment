@@ -11,7 +11,8 @@ var data = {
         { text: 'A項目' },
         { text: 'B項目' },
         { text: 'C項目' }
-    ]
+    ],
+    rawHtml: '<span style="color:blue">Hi, how are you ?</span>'
 }
 
 var crated = function () {
