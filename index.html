@@ -9,19 +9,19 @@
     <div id="app">
         <input type="text" v-model="title">
         <div>{{title}}</div>
-        <span v-bind:title="loadTime">
+        <span :title="loadTime">
             滑鼠移置文字上，顯示'網頁啟動時間'
         </span>
         <br>
-        <button v-on:click="switchShowHint">開關</button>
+        <button @click="switchShowHint">開關</button>
         <div v-if="showHint">看情況顯示文字</div>
         <div>
-            <input type="text" v-bind:disabled="!showHint">
+            <input type="text" :disabled="!showHint">
         </div>
         <div v-once>{{showHint}}</div>
         <hr>
         <ul>
-            <list-item v-for="data in dataList" v-bind:item="data">
+            <list-item v-for="data in dataList" :item="data">
             </list-item>
         </ul>
         <span>HTML解析</span>
