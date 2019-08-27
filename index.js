@@ -4,6 +4,8 @@ Vue.component('list-item', {
 })
 
 var data = {
+    firstName: 'Shawn',
+    lastName: 'Tseng',
     title: 'Hello World',
     loadTime: '網頁啟動於:' + new Date().toLocaleString(),
     showHint: true,
@@ -26,9 +28,22 @@ var app = new Vue({
     methods: {
         switchShowHint: function () {
             this.showHint = !this.showHint
+        },
+        reverseTitle: function () {
+            return this.title.split('').reverse().join('')
         }
     },
     computed: {
+        fullName: {
+            get: function () {
+                return this.firstName + ' ' + this.lastName
+            },
+            set: function (newValue) {
+                var name = newValue.split(' ');
+                this.firstName = name[0];
+                this.lastName = name[name.length - 1];
+            }
+        },
         reverseTitle: function () {
             return this.title.split('').reverse().join('')
         }
