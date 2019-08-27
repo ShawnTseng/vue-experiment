@@ -28,4 +28,9 @@ var app = new Vue({
             this.showHint = !this.showHint
         }
     },
+    computed: {
+        reverseTitle: function () {
+            return this.title.split('').reverse().join('')
+        }
+    },
 })
