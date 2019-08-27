@@ -6,6 +6,8 @@ Vue.component('list-item', {
 var data = {
     firstName: 'Shawn',
     lastName: 'Tseng',
+    age: '',
+    reply: '',
     title: 'Hello World',
     loadTime: '網頁啟動於:' + new Date().toLocaleString(),
     showHint: true,
@@ -48,4 +50,9 @@ var app = new Vue({
             return this.title.split('').reverse().join('')
         }
     },
+    watch: {
+        age: function (oldValue) {
+            this.reply = '你的年紀:' + oldValue;
+        }
+    }
 })
