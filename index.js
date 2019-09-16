@@ -16,7 +16,8 @@ var data = {
         { text: 'B項目' },
         { text: 'C項目' }
     ],
-    rawHtml: '<span style="color:blue">Hi, how are you ?</span>'
+    rawHtml: '<span style="color:blue">Hi, how are you ?</span>',
+    isDark: false
 }
 
 var crated = function () {
@@ -33,6 +34,9 @@ var app = new Vue({
         },
         reverseTitle: function () {
             return this.title.split('').reverse().join('')
+        },
+        changeColor: function () {
+            this.isDark = !this.isDark
         }
     },
     computed: {
@@ -48,6 +52,9 @@ var app = new Vue({
         },
         reverseTitle: function () {
             return this.title.split('').reverse().join('')
+        },
+        classObject: function () {
+            return { 'dark-theme': this.isDark }
         }
     },
     watch: {

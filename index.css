@@ -1,0 +1,18 @@
+.block {
+  margin: 8px;
+  padding: 8px;
+}
+
+.name-block {
+  background-color: antiquewhite;
+}
+
+.dark-theme {
+  /* class 套用順序? */
+  background-color: brown !important;
+  color: white !important;
+}
+
+.age-block {
+  background-color: bisque;
+}

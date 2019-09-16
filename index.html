@@ -7,14 +7,17 @@
 
 <body>
     <div id="app">
-        <input type="text" v-model="fullName">
-        <div>First Name: {{firstName}}</div>
-        <div>Last Name: {{lastName}}</div>
-        <hr>
-        你幾歲?
-        <div>Reply: {{reply}}</div>
-        <input type="text" v-model="age">
-        <hr>
+        <div class="block name-block" :class="{'dark-theme':isDark}">
+            <input type="text" v-model="fullName">
+            <div>First Name: {{firstName}}</div>
+            <div>Last Name: {{lastName}}</div>
+            <button @click="changeColor">Change background color</button>
+        </div>
+        <div class="block age-block" :class="classObject">
+            你幾歲?
+            <div>Reply: {{reply}}</div>
+            <input type="text" v-model="age">
+        </div>
         <input type="text" v-model="title">
         <div>{{title}}</div>
         <div>Reverse Title: {{reverseTitle}}</div>
