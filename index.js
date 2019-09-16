@@ -32,9 +32,6 @@ var app = new Vue({
         switchShowHint: function () {
             this.showHint = !this.showHint
         },
-        reverseTitle: function () {
-            return this.title.split('').reverse().join('')
-        },
         changeColor: function () {
             this.isDark = !this.isDark
         }
