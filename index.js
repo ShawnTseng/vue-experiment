@@ -17,7 +17,8 @@ var data = {
         { text: 'C項目' }
     ],
     rawHtml: '<span style="color:blue">Hi, how are you ?</span>',
-    isDark: false
+    isDark: false,
+    fontSize: 30
 }
 
 var crated = function () {

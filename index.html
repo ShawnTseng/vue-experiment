@@ -18,9 +18,11 @@
             <div>Reply: {{reply}}</div>
             <input type="text" v-model="age">
         </div>
-        <input type="text" v-model="title">
-        <div>{{title}}</div>
-        <div>Reverse Title: {{reverseTitle}}</div>
+        <div class="block hello-world-block" :style="{fontSize: fontSize + 'px'}">
+            <input type="text" v-model="title">
+            <div>{{title}}</div>
+            <div>Reverse Title: {{reverseTitle}}</div>
+        </div>
         <span :title="loadTime">
             滑鼠移置文字上，顯示'網頁啟動時間'
         </span>
