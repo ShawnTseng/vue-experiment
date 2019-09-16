@@ -7,7 +7,7 @@
 
 <body>
     <div id="app">
-        <div :class="['block', 'name-block',isDark ? 'dark-theme' : '']">
+        <div :class="['block', 'name-block', {'dark-theme' : isDark}]">
             <input type="text" v-model="fullName">
             <div>First Name: {{firstName}}</div>
             <div>Last Name: {{lastName}}</div>
