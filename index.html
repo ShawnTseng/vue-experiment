@@ -33,7 +33,7 @@
         <div v-once>{{showHint}}</div>
         <hr>
         <ul>
-            <list-item v-for="data in dataList" :item="data">
+            <list-item :class="'my-list'" v-for="data in dataList" :item="data">
             </list-item>
         </ul>
         <span>HTML解析</span>
