@@ -28,8 +28,25 @@
         </span>
         <br>
         <button @click="switchShowHint">開關</button>
-        <div v-if="showHint">看情況顯示文字</div>
-        <div v-else>Hi v-else顯示</div>
+        <div v-if="showHint">
+            看情況顯示文字 <br>
+            <input type="text">
+        </div>
+        <div v-else>
+            Hi v-else顯示 <br>
+            <input type="text">
+        </div>
+        <hr>
+        版本二
+        <div v-if="showHint">
+            看情況顯示文字 <br>
+            <input type="text" key="input1">
+        </div>
+        <div v-else>
+            Hi v-else顯示 <br>
+            <input type="text" key="input2">
+        </div>
+        <hr>
         <div>
             <input type="text" :disabled="!showHint">
         </div>
