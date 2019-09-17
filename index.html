@@ -29,6 +29,7 @@
         <br>
         <button @click="switchShowHint">開關</button>
         <div v-if="showHint">看情況顯示文字</div>
+        <div v-else>Hi v-else顯示</div>
         <div>
             <input type="text" :disabled="!showHint">
         </div>
