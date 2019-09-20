@@ -61,8 +61,8 @@
         <div>{{rawHtml}}</div>
         <div v-html="rawHtml"></div>
         <ul>
-            <li v-for="item in items">
-                {{item.message}}
+            <li v-for="(item, index) in items">
+                {{index}} - {{item.message}}
             </li>
         </ul>
     </div>
