@@ -23,7 +23,12 @@ var data = {
     items: [
         { message: 'message 1' },
         { message: 'message 2' }
-    ]
+    ],
+    object: {
+        name: 'Shawn',
+        sex: 'male',
+        phone: '0912345678'
+    }
 }
 
 var crated = function () {
