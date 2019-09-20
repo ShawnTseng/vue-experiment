@@ -60,6 +60,11 @@
         <span>HTML解析</span>
         <div>{{rawHtml}}</div>
         <div v-html="rawHtml"></div>
+        <ul>
+            <li v-for="item in items">
+                {{item.message}}
+            </li>
+        </ul>
     </div>
 
     <!-- 開發環境版本，包含了有幫助的命令行警告 -->

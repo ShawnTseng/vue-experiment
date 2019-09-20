@@ -19,7 +19,11 @@ var data = {
     rawHtml: '<span style="color:blue">Hi, how are you ?</span>',
     isDark: false,
     fontSize: 30,
-    styleObject: { fontSize: '30px' }
+    styleObject: { fontSize: '30px' },
+    items: [
+        { message: 'message 1' },
+        { message: 'message 2' }
+    ]
 }
 
 var crated = function () {
