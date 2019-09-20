@@ -67,8 +67,8 @@
         </ul>
 
         <ul>
-            <li v-for="property in object">
-                {{property}}
+            <li v-for="(value, name) in object">
+                {{name}}: {{value}}
             </li>
         </ul>
     </div>
