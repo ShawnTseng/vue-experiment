@@ -21,8 +21,14 @@ var data = {
     fontSize: 30,
     styleObject: { fontSize: '30px' },
     items: [
-        { message: 'message 1' },
-        { message: 'message 2' }
+        {
+            id: 1,
+            message: 'message 1'
+        },
+        {
+            id: 2,
+            message: 'message 2'
+        }
     ],
     object: {
         name: 'Shawn',
