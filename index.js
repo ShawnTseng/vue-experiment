@@ -35,7 +35,8 @@ var data = {
         sex: 'male',
         phone: '0912345678'
     },
-    total: 0
+    total: 0,
+    something: ''
 }
 
 var crated = function () {
@@ -57,6 +58,9 @@ var app = new Vue({
         printEvent: function (e) {
             console.log(e);
             alert(e);
+        },
+        doSomething: function (message) {
+            alert(message);
         }
     },
     computed: {

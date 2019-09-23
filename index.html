@@ -79,7 +79,11 @@
                 {{total}}
             </div>
             <div>
-                <button v-on:click="printEvent">綁定事件</button>                
+                <button v-on:click="printEvent">綁定事件</button>
+            </div>
+            <div>
+                <button @click="doSomething(something)">綁定傳入變數</button>
+                <input type="text" v-model="something">
             </div>
         </div>
     </div>
