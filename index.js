@@ -61,6 +61,9 @@ var app = new Vue({
         },
         doSomething: function (message) {
             alert(message);
+        },
+        doSomething2: function (message, e) {
+            alert(message + e);
         }
     },
     computed: {

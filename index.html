@@ -85,6 +85,9 @@
                 <button @click="doSomething(something)">綁定傳入變數</button>
                 <input type="text" v-model="something">
             </div>
+            <div>
+                <button @click="doSomething2(something,$event)">綁定傳入變數+DOM事件</button>
+            </div>
         </div>
     </div>
 
