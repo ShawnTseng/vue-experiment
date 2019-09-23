@@ -34,7 +34,8 @@ var data = {
         name: 'Shawn',
         sex: 'male',
         phone: '0912345678'
-    }
+    },
+    total: 0
 }
 
 var crated = function () {
@@ -49,7 +50,8 @@ var app = new Vue({
         switchShowHint: function () {
             this.showHint = !this.showHint
         },
-        changeColor: function () {
+        changeColor: function (e) {
+            console.log(e);
             this.isDark = !this.isDark
         }
     },
