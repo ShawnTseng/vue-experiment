@@ -53,6 +53,10 @@ var app = new Vue({
         changeColor: function (e) {
             console.log(e);
             this.isDark = !this.isDark
+        },
+        printEvent: function (e) {
+            console.log(e);
+            alert(e);
         }
     },
     computed: {
