@@ -103,6 +103,15 @@
                     <input type="checkbox" id="checkbox" v-model="checked">
                     <label for="checkbox">{{checked}}</label>
                 </div>
+                <div>
+                    <input type="checkbox" id="memo1" value="memo1" v-model="checkedMemo">
+                    <label for="memo1">Memo1</label>
+                    <input type="checkbox" id="memo2" value="memo2" v-model="checkedMemo">
+                    <label for="memo2">Memo2</label>
+                    <input type="checkbox" id="memo3" value="memo3" v-model="checkedMemo">
+                    <label for="memo3">Memo3</label>
+                    <p>Checked Memo: {{checkedMemo}}</p>
+                </div>
             </div>
         </div>
     </div>

@@ -39,7 +39,8 @@ var data = {
     something: '',
     userName: '',
     remark: '',
-    checked: false
+    checked: false,
+    checkedMemo: []
 }
 
 var created = function () {
