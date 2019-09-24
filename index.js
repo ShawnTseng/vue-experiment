@@ -41,14 +41,14 @@ var data = {
     remark: ''
 }
 
-var crated = function () {
+var created = function () {
     console.log('this', this);
 }
 
 var app = new Vue({
     el: '#app',
     data: data,
-    created: crated,
+    created: created,
     methods: {
         switchShowHint: function () {
             this.showHint = !this.showHint
