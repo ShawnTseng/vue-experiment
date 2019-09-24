@@ -38,7 +38,8 @@ var data = {
     total: 0,
     something: '',
     userName: '',
-    remark: ''
+    remark: '',
+    checked: false
 }
 
 var created = function () {
