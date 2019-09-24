@@ -112,6 +112,13 @@
                     <label for="memo3">Memo3</label>
                     <p>Checked Memo: {{checkedMemo}}</p>
                 </div>
+                <div>
+                    <input type="radio" id="first" value="first" v-model="picked">
+                    <label for="first">first</label>
+                    <input type="radio" id="second" value="second" v-model="picked">
+                    <label for="second">second</label>
+                    <p>Picked: {{picked}}</p>
+                </div>
             </div>
         </div>
     </div>
