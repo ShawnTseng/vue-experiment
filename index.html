@@ -137,6 +137,14 @@
                     </select>
                     <p>Selected: {{selected2}}</p>
                 </div>
+                <div>
+                    <select v-model="selected3">
+                        <option v-for="option in optionList" :value="option.value">
+                            {{option.text}}
+                        </option>
+                    </select>
+                    <p>Selected: {{selected3}}</p>
+                </div>
             </div>
         </div>
     </div>

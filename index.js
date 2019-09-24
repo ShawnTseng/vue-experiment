@@ -43,7 +43,14 @@ var data = {
     checkedMemo: [],
     picked: '',
     selected: '',
-    selected2: ''
+    selected2: '',
+    optionList: [
+        { text: '請選擇', value: '' },
+        { text: 'AAA', value: 'AAA' },
+        { text: 'BBB', value: 'BBB' },
+        { text: 'CCC', value: 'CCC' }
+    ],
+    selected3: ''
 }
 
 var created = function () {
