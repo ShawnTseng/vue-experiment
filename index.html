@@ -88,6 +88,14 @@
             <div>
                 <button @click.stop="doSomething2(something,$event)">綁定傳入變數+DOM事件</button>
             </div>
+
+            <div class="block">
+                <h1>表單輸入綁定</h1>
+                <div>
+                    <input v-model="userName" placeholder="user name">
+                    <p>User name is: {{userName}}</p>
+                </div>
+            </div>
         </div>
     </div>
 

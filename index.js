@@ -36,7 +36,8 @@ var data = {
         phone: '0912345678'
     },
     total: 0,
-    something: ''
+    something: '',
+    userName: ''
 }
 
 var crated = function () {
