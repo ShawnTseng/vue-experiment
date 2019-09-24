@@ -41,7 +41,8 @@ var data = {
     remark: '',
     checked: false,
     checkedMemo: [],
-    picked: ''
+    picked: '',
+    selected: ''
 }
 
 var created = function () {

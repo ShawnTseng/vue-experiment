@@ -119,6 +119,15 @@
                     <label for="second">second</label>
                     <p>Picked: {{picked}}</p>
                 </div>
+                <div>
+                    <select v-model="selected">
+                        <option disabled value="">請選擇</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                    <p>Selected: {{selected}}</p>
+                </div>
             </div>
         </div>
     </div>
