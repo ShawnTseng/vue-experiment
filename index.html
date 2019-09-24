@@ -92,7 +92,7 @@
             <div class="block">
                 <h1>表單輸入綁定</h1>
                 <div>
-                    <input v-model="userName" placeholder="user name">
+                    <input v-model="userName" placeholder="user name" v-on:input="test">
                     <p>User name is: {{userName}}</p>
                 </div>
                 <div>

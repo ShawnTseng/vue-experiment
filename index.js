@@ -66,6 +66,9 @@ var app = new Vue({
         },
         doSomething2: function (message, e) {
             alert(message + e);
+        },
+        test: function (e) {
+            console.log(e);
         }
     },
     computed: {
