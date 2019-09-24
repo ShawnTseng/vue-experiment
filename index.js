@@ -37,7 +37,8 @@ var data = {
     },
     total: 0,
     something: '',
-    userName: ''
+    userName: '',
+    remark: ''
 }
 
 var crated = function () {
