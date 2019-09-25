@@ -1,3 +1,9 @@
+Vue.component('my-header', {
+    props: ['title'],
+    template: '<h1>{{title}}</h1>'
+})
+
+
 Vue.component('counter', {
     data: function () {
         return {
