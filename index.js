@@ -1,3 +1,12 @@
+Vue.component('counter', {
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+
 Vue.component('list-item', {
     props: ['item'],
     template: '<li>{{item.text}}</li>'
