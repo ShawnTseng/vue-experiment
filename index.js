@@ -7,6 +7,19 @@ Vue.component('my-header', {
     `
 })
 
+Vue.component('my-input', {
+    props: ['value'],
+    template: `
+    <div>
+    Hi~~~my input
+    <input
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+    />
+    </div>
+    `
+})
+
 
 Vue.component('counter', {
     data: function () {
@@ -70,7 +83,8 @@ var data = {
         { text: 'CCC', value: 'CCC' }
     ],
     selected3: '',
-    catchClickCount: 0
+    catchClickCount: 0,
+    myInputValue: 'Shawn Test'
 }
 
 var created = function () {
