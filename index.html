@@ -9,16 +9,13 @@
     <div id="app">
         <my-header title="Vue練習" @event-emit-test="onCatchCount"></my-header>
         {{catchClickCount}}
-        <counter></counter>
-        <counter></counter>
-        <my-block>
-            <div :class=" ['name-block' , {'dark-theme' : isDark}]">
-                <my-input v-model="fullName"></my-input>
-                <div>First Name: {{firstName}}</div>
-                <div>Last Name: {{lastName}}</div>
-                <button @click="changeColor">Change background color</button>
-            </div>
-        </my-block>
+        <button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]"
+            v-on:click="currentTab = tab">
+            {{ tab }}
+        </button>
+        <component :is="currentTabComponent"></component>
+
+
 
         <div class="block age-block" :class="classObject">
             你幾歲?

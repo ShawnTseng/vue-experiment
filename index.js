@@ -28,7 +28,6 @@ Vue.component('my-block', {
     `
 })
 
-
 Vue.component('counter', {
     data: function () {
         return {
@@ -38,14 +37,58 @@ Vue.component('counter', {
     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
 })
 
+Vue.component('function1', {
+    template: `
+    <div>        
+        <counter></counter>
+        <counter></counter>
+    </div>`
+})
+
+Vue.component('function2', {
+    template: `
+    <my-block>
+        <div :class=" ['name-block' , {'dark-theme' : isDark}]">
+            <my-input v-model="fullName"></my-input>
+            <div>First Name: {{firstName}}</div>
+            <div>Last Name: {{lastName}}</div>
+            <button @click="changeColor">Change background color</button>
+        </div>
+    </my-block>`,
+    data: function () {
+        return {
+            firstName: 'Shawn',
+            lastName: 'Tseng',
+            isDark: false
+        }
+    },
+    methods: {
+        changeColor: function (e) {
+            console.log(e);
+            this.isDark = !this.isDark
+        }
+    },
+    computed: {
+        fullName: {
+            get: function () {
+                return this.firstName + ' ' + this.lastName
+            },
+            set: function (newValue) {
+                var name = newValue.split(' ');
+                this.firstName = name[0];
+                this.lastName = name[name.length - 1];
+            }
+        }
+    },
+})
+
+
 Vue.component('list-item', {
     props: ['item'],
     template: '<li>{{item.text}}</li>'
 })
 
 var data = {
-    firstName: 'Shawn',
-    lastName: 'Tseng',
     age: '',
     reply: '',
     title: 'Hello World',
@@ -57,7 +100,6 @@ var data = {
         { text: 'C項目' }
     ],
     rawHtml: '<span style="color:blue">Hi, how are you ?</span>',
-    isDark: false,
     fontSize: 30,
     styleObject: { fontSize: '30px' },
     items: [
@@ -83,7 +125,7 @@ var data = {
     checkedMemo: [],
     picked: '',
     selected: '',
-    selected2: '',
+    selected2: [],
     optionList: [
         { text: '請選擇', value: '' },
         { text: 'AAA', value: 'AAA' },
@@ -92,7 +134,9 @@ var data = {
     ],
     selected3: '',
     catchClickCount: 0,
-    myInputValue: 'Shawn Test'
+    myInputValue: 'Shawn Test',
+    tabs: ['function1', 'function2', 'function3'],
+    currentTab: 'function1'
 }
 
 var created = function () {
@@ -106,10 +150,6 @@ var app = new Vue({
     methods: {
         switchShowHint: function () {
             this.showHint = !this.showHint
-        },
-        changeColor: function (e) {
-            console.log(e);
-            this.isDark = !this.isDark
         },
         printEvent: function (e) {
             console.log(e);
@@ -129,21 +169,14 @@ var app = new Vue({
         }
     },
     computed: {
-        fullName: {
-            get: function () {
-                return this.firstName + ' ' + this.lastName
-            },
-            set: function (newValue) {
-                var name = newValue.split(' ');
-                this.firstName = name[0];
-                this.lastName = name[name.length - 1];
-            }
-        },
         reverseTitle: function () {
             return this.title.split('').reverse().join('')
         },
         classObject: function () {
             return { 'dark-theme': this.isDark }
+        },
+        currentTabComponent: function () {
+            return this.currentTab.toLowerCase()
         }
     },
     watch: {
