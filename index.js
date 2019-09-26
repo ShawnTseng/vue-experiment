@@ -101,6 +101,9 @@ var app = new Vue({
         },
         test: function (e) {
             console.log(e);
+        },
+        onCatchCount: function (count) {
+            this.catchClickCount += count
         }
     },
     computed: {

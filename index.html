@@ -7,150 +7,150 @@
 
 <body>
     <div id="app">
-        <my-header title="Vue練習" @event-emit-test="catchClickCount+=$event"></my-header>
+        <my-header title="Vue練習" @event-emit-test="onCatchCount"></my-header>
         {{catchClickCount}}
         <counter></counter>
         <counter></counter>
-        <div :class="['block', 'name-block', {'dark-theme' : isDark}]">
+        <div :class=" ['block', 'name-block' , {'dark-theme' : isDark}]">
             <input type="text" v-model="fullName">
             <div>First Name: {{firstName}}</div>
             <div>Last Name: {{lastName}}</div>
             <button @click="changeColor">Change background color</button>
-        </div>
-        <div class="block age-block" :class="classObject">
-            你幾歲?
-            <div>Reply: {{reply}}</div>
-            <input type="text" v-model="age">
-        </div>
-        <div class="block hello-world-block" :style="styleObject">
-            <input type="text" v-model="title">
-            <div>{{title}}</div>
-            <div>Reverse Title: {{reverseTitle}}</div>
-        </div>
-        <span :title="loadTime">
-            滑鼠移置文字上，顯示'網頁啟動時間'
-        </span>
-        <br>
-        <button @click="switchShowHint">開關</button>
-        <div v-if="showHint">
-            看情況顯示文字 <br>
-            <input type="text">
-        </div>
-        <div v-else>
-            Hi v-else顯示 <br>
-            <input type="text">
-        </div>
-        <hr>
-        版本二
-        <div v-if="showHint">
-            看情況顯示文字 <br>
-            <input type="text" key="input1">
-        </div>
-        <div v-else>
-            Hi v-else顯示 <br>
-            <input type="text" key="input2">
-        </div>
-        <div v-show="showHint">我是v-show</div>
-        <hr>
-        <div>
-            <input type="text" :disabled="!showHint">
-        </div>
-        <div v-once>{{showHint}}</div>
-        <hr>
-        <ul>
-            <list-item :class="'my-list'" v-for="data in dataList" :item="data">
-            </list-item>
-        </ul>
-        <span>HTML解析</span>
-        <div>{{rawHtml}}</div>
-        <div v-html="rawHtml"></div>
-        <ul>
-            <li v-for="(item, index) of items" :key="item.id">
-                {{index}} - {{item.message}}
-            </li>
-        </ul>
+    </div>
+    <div class="block age-block" :class="classObject">
+        你幾歲?
+        <div>Reply: {{reply}}</div>
+        <input type="text" v-model="age">
+    </div>
+    <div class="block hello-world-block" :style="styleObject">
+        <input type="text" v-model="title">
+        <div>{{title}}</div>
+        <div>Reverse Title: {{reverseTitle}}</div>
+    </div>
+    <span :title="loadTime">
+        滑鼠移置文字上，顯示'網頁啟動時間'
+    </span>
+    <br>
+    <button @click="switchShowHint">開關</button>
+    <div v-if="showHint">
+        看情況顯示文字 <br>
+        <input type="text">
+    </div>
+    <div v-else>
+        Hi v-else顯示 <br>
+        <input type="text">
+    </div>
+    <hr>
+    版本二
+    <div v-if="showHint">
+        看情況顯示文字 <br>
+        <input type="text" key="input1">
+    </div>
+    <div v-else>
+        Hi v-else顯示 <br>
+        <input type="text" key="input2">
+    </div>
+    <div v-show="showHint">我是v-show</div>
+    <hr>
+    <div>
+        <input type="text" :disabled="!showHint">
+    </div>
+    <div v-once>{{showHint}}</div>
+    <hr>
+    <ul>
+        <list-item :class="'my-list'" v-for="data in dataList" :item="data">
+        </list-item>
+    </ul>
+    <span>HTML解析</span>
+    <div>{{rawHtml}}</div>
+    <div v-html="rawHtml"></div>
+    <ul>
+        <li v-for="(item, index) of items" :key="item.id">
+            {{index}} - {{item.message}}
+        </li>
+    </ul>
 
-        <ul>
-            <li v-for="(value, name, index) in object">
-                {{index}}. {{name}}: {{value}}
-            </li>
-        </ul>
+    <ul>
+        <li v-for="(value, name, index) in object">
+            {{index}}. {{name}}: {{value}}
+        </li>
+    </ul>
+
+    <div class="block">
+        事件測試
+        <div @click="total+=1">
+            <button @click.stop="total+=1">簡易邏輯</button>
+            {{total}}
+        </div>
+        <div>
+            <button v-on:click="printEvent">綁定事件</button>
+        </div>
+        <div>
+            <button @click="doSomething(something)">綁定傳入變數</button>
+            <input type="text" v-model="something">
+        </div>
+        <div>
+            <button @click.stop="doSomething2(something,$event)">綁定傳入變數+DOM事件</button>
+        </div>
 
         <div class="block">
-            事件測試
-            <div @click="total+=1">
-                <button @click.stop="total+=1">簡易邏輯</button>
-                {{total}}
+            <h1>表單輸入綁定</h1>
+            <div>
+                <input v-model="userName" placeholder="user name" v-on:input="test">
+                <p>User name is: {{userName}}</p>
             </div>
             <div>
-                <button v-on:click="printEvent">綁定事件</button>
+                <textarea v-model="remark" placeholder="remark"></textarea>
+                <p style="white-space: pre-line">{{remark}}</p>
             </div>
             <div>
-                <button @click="doSomething(something)">綁定傳入變數</button>
-                <input type="text" v-model="something">
+                <input type="checkbox" id="checkbox" v-model="checked">
+                <label for="checkbox">{{checked}}</label>
             </div>
             <div>
-                <button @click.stop="doSomething2(something,$event)">綁定傳入變數+DOM事件</button>
+                <input type="checkbox" id="memo1" value="memo1" v-model="checkedMemo">
+                <label for="memo1">Memo1</label>
+                <input type="checkbox" id="memo2" value="memo2" v-model="checkedMemo">
+                <label for="memo2">Memo2</label>
+                <input type="checkbox" id="memo3" value="memo3" v-model="checkedMemo">
+                <label for="memo3">Memo3</label>
+                <p>Checked Memo: {{checkedMemo}}</p>
             </div>
-
-            <div class="block">
-                <h1>表單輸入綁定</h1>
-                <div>
-                    <input v-model="userName" placeholder="user name" v-on:input="test">
-                    <p>User name is: {{userName}}</p>
-                </div>
-                <div>
-                    <textarea v-model="remark" placeholder="remark"></textarea>
-                    <p style="white-space: pre-line">{{remark}}</p>
-                </div>
-                <div>
-                    <input type="checkbox" id="checkbox" v-model="checked">
-                    <label for="checkbox">{{checked}}</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="memo1" value="memo1" v-model="checkedMemo">
-                    <label for="memo1">Memo1</label>
-                    <input type="checkbox" id="memo2" value="memo2" v-model="checkedMemo">
-                    <label for="memo2">Memo2</label>
-                    <input type="checkbox" id="memo3" value="memo3" v-model="checkedMemo">
-                    <label for="memo3">Memo3</label>
-                    <p>Checked Memo: {{checkedMemo}}</p>
-                </div>
-                <div>
-                    <input type="radio" id="first" value="first" v-model="picked">
-                    <label for="first">first</label>
-                    <input type="radio" id="second" value="second" v-model="picked">
-                    <label for="second">second</label>
-                    <p>Picked: {{picked}}</p>
-                </div>
-                <div>
-                    <select v-model="selected">
-                        <option disabled value="">請選擇</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                    </select>
-                    <p>Selected: {{selected}}</p>
-                </div>
-                <div>
-                    <select v-model="selected2" multiple>
-                        <option disabled value="">請選擇</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                    </select>
-                    <p>Selected: {{selected2}}</p>
-                </div>
-                <div>
-                    <select v-model="selected3">
-                        <option v-for="option in optionList" :value="option.value">
-                            {{option.text}}
-                        </option>
-                    </select>
-                    <p>Selected: {{selected3}}</p>
-                </div>
+            <div>
+                <input type="radio" id="first" value="first" v-model="picked">
+                <label for="first">first</label>
+                <input type="radio" id="second" value="second" v-model="picked">
+                <label for="second">second</label>
+                <p>Picked: {{picked}}</p>
+            </div>
+            <div>
+                <select v-model="selected">
+                    <option disabled value="">請選擇</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <p>Selected: {{selected}}</p>
+            </div>
+            <div>
+                <select v-model="selected2" multiple>
+                    <option disabled value="">請選擇</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <p>Selected: {{selected2}}</p>
+            </div>
+            <div>
+                <select v-model="selected3">
+                    <option v-for="option in optionList" :value="option.value">
+                        {{option.text}}
+                    </option>
+                </select>
+                <p>Selected: {{selected3}}</p>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- 開發環境版本，包含了有幫助的命令行警告 -->
