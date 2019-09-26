@@ -11,12 +11,15 @@
         {{catchClickCount}}
         <counter></counter>
         <counter></counter>
-        <div :class=" ['block', 'name-block' , {'dark-theme' : isDark}]">
-            <my-input v-model="fullName"></my-input>
-            <div>First Name: {{firstName}}</div>
-            <div>Last Name: {{lastName}}</div>
-            <button @click="changeColor">Change background color</button>
-        </div>
+        <my-block>
+            <div :class=" ['name-block' , {'dark-theme' : isDark}]">
+                <my-input v-model="fullName"></my-input>
+                <div>First Name: {{firstName}}</div>
+                <div>Last Name: {{lastName}}</div>
+                <button @click="changeColor">Change background color</button>
+            </div>
+        </my-block>
+
         <div class="block age-block" :class="classObject">
             你幾歲?
             <div>Reply: {{reply}}</div>

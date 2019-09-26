@@ -20,6 +20,14 @@ Vue.component('my-input', {
     `
 })
 
+Vue.component('my-block', {
+    template: `
+    <div class="block">
+        <slot></slot>
+    </div>
+    `
+})
+
 
 Vue.component('counter', {
     data: function () {
