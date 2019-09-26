@@ -12,7 +12,7 @@
         <counter></counter>
         <counter></counter>
         <div :class=" ['block', 'name-block' , {'dark-theme' : isDark}]">
-            <my-input v-bind:value="fullName" v-on:input="fullName=$event"></my-input>                 
+            <my-input v-model="fullName"></my-input>                 
             <div>First Name: {{firstName}}</div>
             <div>Last Name: {{lastName}}</div>
             <button @click="changeColor">Change background color</button>
