@@ -1,6 +1,11 @@
 Vue.component('my-header', {
     props: ['title'],
-    template: '<h1>{{title}}</h1>'
+    template: `<div>
+    <h1>{{title}}</h1>
+<button v-on:click="$emit('event-emit-test')">event emit</button>
+<br>
+</div>
+    `
 })
 
 
@@ -65,7 +70,8 @@ var data = {
         { text: 'BBB', value: 'BBB' },
         { text: 'CCC', value: 'CCC' }
     ],
-    selected3: ''
+    selected3: '',
+    catchClickCount: 0
 }
 
 var created = function () {
