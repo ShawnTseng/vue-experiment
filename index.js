@@ -82,6 +82,32 @@ Vue.component('function2', {
     },
 })
 
+Vue.component('function3', {
+    template: `
+    <div class="block age-block" :class="classObject">
+        你幾歲?
+        <div>Reply: {{reply}}</div>
+        <input type="text" v-model="age">
+    </div>
+    `,
+    data() {
+        return {
+            age: '',
+            reply: ''
+        }
+    },
+    computed: {
+        classObject: function () {
+            return { 'dark-theme': this.isDark }
+        }
+    },
+    watch: {
+        age: function (oldValue) {
+            this.reply = '你的年紀:' + oldValue;
+        }
+    }
+})
+
 
 Vue.component('list-item', {
     props: ['item'],
@@ -89,8 +115,6 @@ Vue.component('list-item', {
 })
 
 var data = {
-    age: '',
-    reply: '',
     title: 'Hello World',
     loadTime: '網頁啟動於:' + new Date().toLocaleString(),
     showHint: true,
@@ -172,16 +196,8 @@ var app = new Vue({
         reverseTitle: function () {
             return this.title.split('').reverse().join('')
         },
-        classObject: function () {
-            return { 'dark-theme': this.isDark }
-        },
         currentTabComponent: function () {
             return this.currentTab.toLowerCase()
-        }
-    },
-    watch: {
-        age: function (oldValue) {
-            this.reply = '你的年紀:' + oldValue;
         }
     }
 })
