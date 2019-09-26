@@ -2,8 +2,7 @@ Vue.component('my-header', {
     props: ['title'],
     template: `<div>
     <h1>{{title}}</h1>
-<button v-on:click="$emit('event-emit-test')">event emit</button>
-<br>
+    <button v-on:click="$emit('event-emit-test')">event emit</button>
 </div>
     `
 })
