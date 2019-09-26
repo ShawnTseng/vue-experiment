@@ -7,7 +7,7 @@
 
 <body>
     <div id="app">
-        <my-header title="Vue練習" @event-emit-test="catchClickCount+=1"></my-header>
+        <my-header title="Vue練習" @event-emit-test="catchClickCount+=$event"></my-header>
         {{catchClickCount}}
         <counter></counter>
         <counter></counter>
