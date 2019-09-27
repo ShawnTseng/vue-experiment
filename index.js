@@ -163,6 +163,10 @@ var data = {
     currentTab: 'function1'
 }
 
+const FooterComponent = {
+    template: '<div>copyright @ blabalbala</div>'
+}
+
 var created = function () {
     console.log('this', this);
 }
@@ -199,5 +203,8 @@ var app = new Vue({
         currentTabComponent: function () {
             return this.currentTab.toLowerCase()
         }
+    },
+    components: {
+        'my-footer': FooterComponent
     }
 })
