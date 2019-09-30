@@ -1,6 +1,6 @@
 Vue.component('myInput', {
     props: {
-        value: String,
+        value: [String, Number],
         prefix: String,
         showPrefix: Boolean
     },
