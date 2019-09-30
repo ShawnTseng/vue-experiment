@@ -1,5 +1,8 @@
 Vue.component('myInput', {
-    props: ['value'],
+    props: {
+        value: any,
+        prefix: String
+    },
     template: `
     <div>
     Hi~~~my input
