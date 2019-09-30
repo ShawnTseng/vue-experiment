@@ -1,6 +1,15 @@
 Vue.component('myInput', {
     props: {
-        value: [String, Number],
+        value: {
+            type: [String, Number],
+            required: true,
+            default: 'Shawn',
+            // 自定義驗證
+            validator: function (value) {
+                // 這個值必須匹配下列字符串中的一個
+                return ['success', 'warning', 'danger'].indexOf(value) !== -1
+            }
+        },
         prefix: String,
         showPrefix: Boolean
     },
