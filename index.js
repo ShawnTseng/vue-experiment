@@ -1,11 +1,14 @@
 Vue.component('myInput', {
     props: {
-        value: any,
-        prefix: String
+        value: String,
+        prefix: String,
+        showPrefix: Boolean
     },
     template: `
     <div>
+    <span v-if="showPrefix">
     Hi~~~my input
+    </span>
     <input
         v-bind:value="value"
         v-on:input="$emit('input', $event.target.value)"
