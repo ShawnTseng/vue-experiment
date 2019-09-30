@@ -1,4 +1,4 @@
-Vue.component('my-input', {
+Vue.component('myInput', {
     props: ['value'],
     template: `
     <div>
