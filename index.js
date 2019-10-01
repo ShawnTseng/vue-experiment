@@ -14,7 +14,6 @@ Vue.component('my-checkbox', {
             return Object.assign({},
                 this.$listeners,
                 {
-
                     click: function (event) {
                         vm.$emit('click', event.target.checked)
                     },
