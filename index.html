@@ -24,7 +24,8 @@
             滑鼠移置文字上，顯示'網頁啟動時間'
         </span>
         <br>
-        <my-checkbox v-model="YesOrNo" v-on:focus.native="onFocus"></my-checkbox>
+        <my-checkbox :label="'My Checkbox'" v-model="YesOrNo" v-on:click.native="onClick"></my-checkbox>
+        {{YesOrNo}}
         <br>
         <button @click="switchShowHint">開關</button>
         <div v-if="showHint">

@@ -1,17 +1,39 @@
 Vue.component('my-checkbox', {
+    inheritAttrs: false,
     model: {
         prop: 'checked',
         event: 'change'
     },
     props: {
+        label: String,
         checked: Boolean
     },
+    computed: {
+        checkboxListener: function () {
+            var vm = this;
+            return Object.assign({},
+                this.$listeners,
+                {
+
+                    click: function (event) {
+                        vm.$emit('click', event.target.checked)
+                    },
+                    change: function (event) {
+                        vm.$emit('change', event.target.checked)
+                    },
+                })
+        }
+    },
     template: `
-    <input
-        type="checkbox"
-        v-bind:checked="checked"
-        v-on:change="$emit('change',$event.target.checked)"
-    >
+    <label>
+    {{label}}
+        <input
+            type="checkbox"
+            v-bind="$attrs"
+            v-bind:checked="checked"            
+            v-on="checkboxListener"
+        >
+    </label>
     `
 })
 
@@ -220,7 +242,8 @@ var app = new Vue({
         onCatchCount: function (count) {
             this.catchClickCount += count
         },
-        onFocus:function () {
+        onClick: function () {
+            alert('My checkbox was checked.');
             console.log('My checkbox was checked.');
         }
     },
