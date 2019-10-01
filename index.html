@@ -24,6 +24,8 @@
             滑鼠移置文字上，顯示'網頁啟動時間'
         </span>
         <br>
+        <my-checkbox v-model="YesOrNo"></my-checkbox>
+        <br>
         <button @click="switchShowHint">開關</button>
         <div v-if="showHint">
             看情況顯示文字 <br>

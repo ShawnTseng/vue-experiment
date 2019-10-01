@@ -1,15 +1,33 @@
+Vue.component('my-checkbox', {
+    model: {
+        prop: 'checked',
+        event: 'change'
+    },
+    props: {
+        checked: Boolean
+    },
+    template: `
+    <input
+        type="checkbox"
+        v-bind:checked="checked"
+        v-on:change="$emit('change',$event.target.checked)"
+    >
+    `
+})
+
 Vue.component('myInput', {
     props: {
-        value: {
-            type: [String, Number],
-            required: true,
-            default: 'Shawn',
-            // 自定義驗證
-            validator: function (value) {
-                // 這個值必須匹配下列字符串中的一個
-                return ['success', 'warning', 'danger'].indexOf(value) !== -1
-            }
-        },
+        value: [String, Number],
+        // value: {
+        //     type: [String, Number],
+        //     required: true,
+        //     default: 'Shawn',
+        //     // 自定義驗證
+        //     validator: function (value) {
+        //         // 這個值必須匹配下列字符串中的一個
+        //         return ['success', 'warning', 'danger'].indexOf(value) !== -1
+        //     }
+        // },
         prefix: String,
         showPrefix: Boolean
     },
@@ -166,7 +184,8 @@ var data = {
     catchClickCount: 0,
     myInputValue: 'Shawn Test',
     tabs: ['function1', 'function2', 'function3'],
-    currentTab: 'function1'
+    currentTab: 'function1',
+    YesOrNo: false
 }
 
 const FooterComponent = {
