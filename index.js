@@ -219,6 +219,9 @@ var app = new Vue({
         },
         onCatchCount: function (count) {
             this.catchClickCount += count
+        },
+        onFocus:function () {
+            console.log('My checkbox was checked.');
         }
     },
     computed: {

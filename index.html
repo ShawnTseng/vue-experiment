@@ -17,14 +17,14 @@
 
         <div class="block hello-world-block" :style="styleObject">
             <my-input type="text" style="font-size: 40px" v-model="title" show-prefix>
-            <div>{{title}}</div>
-            <div>Reverse Title: {{reverseTitle}}</div>
+                <div>{{title}}</div>
+                <div>Reverse Title: {{reverseTitle}}</div>
         </div>
         <span :title="loadTime">
             滑鼠移置文字上，顯示'網頁啟動時間'
         </span>
         <br>
-        <my-checkbox v-model="YesOrNo"></my-checkbox>
+        <my-checkbox v-model="YesOrNo" v-on:focus.native="onFocus"></my-checkbox>
         <br>
         <button @click="switchShowHint">開關</button>
         <div v-if="showHint">
@@ -152,7 +152,7 @@
     <!-- 開發環境版本，包含了有幫助的命令行警告 -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="header.js"></script>
-    <script src="index.js"></script>    
+    <script src="index.js"></script>
 </body>
 
 </html>
