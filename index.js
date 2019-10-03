@@ -1,8 +1,12 @@
 Vue.component('my-tab', {
     template:`
+    <div>
     <a style="border: 1px solid black;">
-        <slot></slot>
+        <slot>預設內容</slot>
     </a>
+    <br>
+    <slot name="content"></slot>
+    </div>
     `
 })
 

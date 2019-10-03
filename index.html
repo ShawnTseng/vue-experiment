@@ -18,7 +18,12 @@
             slot content
             <br>
             {{currentTab}}
+            <template v-slot:content>
+                具名slot，給定名稱content，插入指定位置
+            </template>
         </my-tab>
+        <br>
+        <my-tab></my-tab>
         <div class="block hello-world-block" :style="styleObject">
             <my-input type="text" style="font-size: 40px" v-model="title" show-prefix>
                 <div>{{title}}</div>
