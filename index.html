@@ -14,7 +14,11 @@
             {{ tab }}
         </button>
         <component :is="currentTabComponent"></component>
-
+        <my-tab>
+            slot content
+            <br>
+            {{currentTab}}
+        </my-tab>
         <div class="block hello-world-block" :style="styleObject">
             <my-input type="text" style="font-size: 40px" v-model="title" show-prefix>
                 <div>{{title}}</div>

@@ -1,3 +1,11 @@
+Vue.component('my-tab', {
+    template:`
+    <a style="border: 1px solid black;">
+        <slot></slot>
+    </a>
+    `
+})
+
 Vue.component('my-checkbox', {
     inheritAttrs: false,
     model: {
