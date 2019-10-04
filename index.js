@@ -1,14 +1,17 @@
 Vue.component('my-tab', {
     data: function () {
         return {
-            tabName: 'Default Tab Name'
+            tab: {
+                tabName: 'Default Tab Name',
+                tabName2: 'Tab 2'
+            }
         }
     },
     template: `
     <div>
     <br>
     <a style="border: 1px solid black;">
-        <slot :tabName="tabName">預設內容</slot>
+        <slot :tab="tab">預設內容</slot>
     </a>
     <br>
     <slot name="content"></slot>
