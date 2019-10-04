@@ -1,6 +1,13 @@
 Vue.component('my-tab', {
-    template:`
+    data: function () {
+        return {
+            tabName: 'Default Tab Name'
+        }
+    },
+    template: `
     <div>
+    {{tabName}}
+    <br>
     <a style="border: 1px solid black;">
         <slot>預設內容</slot>
     </a>
@@ -218,7 +225,8 @@ var data = {
     myInputValue: 'Shawn Test',
     tabs: ['function1', 'function2', 'function3'],
     currentTab: 'function1',
-    YesOrNo: false
+    YesOrNo: false,
+    tabName: 'My Tab Name'
 }
 
 const FooterComponent = {

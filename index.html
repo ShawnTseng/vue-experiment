@@ -23,7 +23,9 @@
             </template>
         </my-tab>
         <br>
-        <my-tab></my-tab>
+        <my-tab v-bind:tabName="tabName">
+            {{tabName}}
+        </my-tab>
         <div class="block hello-world-block" :style="styleObject">
             <my-input type="text" style="font-size: 40px" v-model="title" show-prefix>
                 <div>{{title}}</div>
