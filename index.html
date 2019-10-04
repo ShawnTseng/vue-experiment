@@ -24,6 +24,9 @@
         </my-tab>
         <br>
         <my-tab>
+            <template v-slot:default="slotProps">
+                {{slotProps.tab.tabName2}}
+            </template>
         </my-tab>
         <div class="block hello-world-block" :style="styleObject">
             <my-input type="text" style="font-size: 40px" v-model="title" show-prefix>
