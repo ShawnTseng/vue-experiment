@@ -24,8 +24,8 @@
         </my-tab>
         <br>
         <my-tab>
-            <template v-slot="{tab}">
-                {{tab.tabName2}}
+            <template v-slot="{tab:myTabCollection}">
+                {{myTabCollection.tabName2}}
             </template>
         </my-tab>
         <div class="block hello-world-block" :style="styleObject">
