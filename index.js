@@ -6,10 +6,9 @@ Vue.component('my-tab', {
     },
     template: `
     <div>
-    {{tabName}}
     <br>
     <a style="border: 1px solid black;">
-        <slot>預設內容</slot>
+        <slot :tabName="tabName">預設內容</slot>
     </a>
     <br>
     <slot name="content"></slot>
