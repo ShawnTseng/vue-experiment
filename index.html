@@ -18,13 +18,13 @@
             slot content
             <br>
             {{currentTab}}
-            <template v-slot:content>
+            <template #content>
                 具名slot，給定名稱content，插入指定位置
             </template>
         </my-tab>
         <br>
         <my-tab>
-            <template v-slot="{tab={tabName2:'This is my tab2'}}">
+            <template #default="{tab={tabName2:'This is my tab2'}}">
                 {{tab.tabName2}}
             </template>
         </my-tab>
