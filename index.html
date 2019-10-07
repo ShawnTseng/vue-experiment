@@ -13,7 +13,9 @@
             v-on:click="currentTab = tab">
             {{ tab }}
         </button>
-        <component :is="currentTabComponent"></component>
+        <keep-alive>
+            <component :is="currentTabComponent"></component>
+        </keep-alive>
         <my-tab>
             slot content
             <br>
