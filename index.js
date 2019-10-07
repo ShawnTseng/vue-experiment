@@ -103,12 +103,16 @@ Vue.component('counter', {
     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
 })
 
-Vue.component('function1', {
-    template: `
-    <div>        
-        <counter></counter>
-        <counter></counter>
-    </div>`
+Vue.component('function1', function (resolve, reject) {
+    setTimeout(() => {
+        resolve({
+            template: `
+            <div>        
+                <counter></counter>
+                <counter></counter>
+            </div>`
+        })
+    }, 3000);
 })
 
 Vue.component('function2', {
