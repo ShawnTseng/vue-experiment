@@ -33,5 +33,11 @@
   "bugs": {
     "url": "https://github.com/ShawnTseng/vue-experiment/issues"
   },
-  "homepage": "https://github.com/ShawnTseng/vue-experiment#readme"
+  "homepage": "https://github.com/ShawnTseng/vue-experiment#readme",
+  "babel": {
+    "presets": [
+      "env",
+      "vue"
+    ]
+  }
 }
